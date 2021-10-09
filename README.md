@@ -6,7 +6,7 @@ Here are the display videos:
 [Gazebo with Teleop, own car and laser model](https://www.youtube.com/watch?v=5N5hD4imLy4)
 [Gazebo with Publisher and Subscriber](https://www.youtube.com/watch?v=G4sIyFC-L4w)
 ## To run the Package:
-  * First (source the file):
+  * First (source the file):  
     Type
     ```bash 
     source /devel/setup.bash
@@ -17,13 +17,13 @@ Here are the display videos:
     gedit ~/.bashrc
     ```
     and add the setup.bash path under the buttom.
-  * Second (Run Gazebo):
+  * Second (Run Gazebo):  
     Open a terminal and type
     ```bash 
     roslaunch car_gazebo car_world.launch
     ```
     The world map and the car would display in gazebo.
-  * Third (Run Teleop):
+  * Third (Run Teleop):  
     Open another terminal and type 
     ```bash
     roscd car_control
@@ -36,13 +36,13 @@ Here are the display videos:
     , the car could be controlled with 
     {u i o j k l m , .}
 ## To run the Publisher and the Subscriber:
-  * First (Run Gazebo):
+  * First (Run Gazebo):  
     Open a terminal and type 
     ```bash
     roslaunch car_gazebo car_world.launch
     ```
     (make sure the file have been source)
-  * Second (Run Publisher):
+  * Second (Run Publisher):  
     Open another terminal and type
     ```sh
     roscd car_control
@@ -53,7 +53,7 @@ Here are the display videos:
     python3 publisher.py
     ```
     The car would start to move and the terminal will show the command.
-  * Third (Run Subscriber):
+  * Third (Run Subscriber):  
     Open another terminal and type 
     ```bash
     roscd car_control
