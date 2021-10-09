@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter
+     rpy="1.5707963267949 0 -1.35802429133606"
+     rpy="1.5707963267949 0 2.87679166055482" /> -->
+<robot
+  name="car_assembly_ver2">
+  <link
+    name="dummy_link">
+  </link>
+  <joint
+    name="dummy_joint"
+    type="fixed">
+    <parent
+      link="dummy_link" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-3.4784846535937E-17 -0.0161077706536968 0.131961243103893"
+        rpy="0 0 0" />
+      <mass
+        value="103.988130611323" />
+      <inertia
+        ixx="7.43759100474043"
+        ixy="9.3987716068491E-16"
+        ixz="2.68408467226263E-17"
+        iyy="2.44395295522664"
+        iyz="-0.15035724813958"
+        izz="8.75188656091418" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FrontRight_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0.111439645125416 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.935654513020705" />
+      <inertia
+        ixx="0.00434880924170957"
+        ixy="-4.18753536521103E-19"
+        ixz="-8.67361737988404E-19"
+        iyy="0.00211355589259111"
+        iyz="-9.77325430971779E-19"
+        izz="0.00410261849355986" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontRight_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontRight_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRight_Joint"
+    type="revolute">
+    <origin
+      xyz="0.254 0.3556 0.0254"
+      
+      rpy="1.5707963267949 0 1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontRight_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="3000" velocity="3000.0" lower="-0.5" upper="0.5" />
+  </joint>
+  
+  <transmission name="FrontRight_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="FrontRight_Joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="FrontRight_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+  
+  <link
+    name="FrontRightWheel_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.27370840064708" />
+      <inertia
+        ixx="0.00720966812251228"
+        ixy="0"
+        ixz="3.03576608295941E-18"
+        iyy="0.00720966812251228"
+        iyz="-1.19262238973405E-18"
+        izz="0.0122845286882287" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontRightWheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontRightWheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontRightWheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0380999999999999 0"
+      rpy="0 0 0.834972574707296" />
+    <parent
+      link="FrontRight_Link" />
+    <child
+      link="FrontRightWheel_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <transmission name="FrontRightWheel_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="FrontRightWheel_Joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="FrontRightWheel_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+  
+  <link
+    name="FrontLeft_Link">
+    <inertial>
+      <origin
+        xyz="0 0.111439645125416 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.935654513020705" />
+      <inertia
+        ixx="0.00434880924170957"
+        ixy="4.78350817793257E-19"
+        ixz="-1.0842021724855E-19"
+        iyy="0.00211355589259111"
+        iyz="-1.09576393120389E-18"
+        izz="0.00410261849355986" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontLeft_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontLeft_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeft_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.254 0.3556 0.0253999999999997"
+      
+      rpy="1.5707963267949 0 1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="FrontLeft_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="3000" velocity="3000.0" lower="-0.5" upper="0.5" />
+  </joint>
+  <transmission name="FrontLeft_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="FrontLeft_Joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="FrontLeft_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+  
+  <link
+    name="FrontLeftWheel_Link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 5.55111512312578E-17 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.27370840064708" />
+      <inertia
+        ixx="0.00720966812251228"
+        ixy="-5.35324822664718E-19"
+        ixz="-5.14996031930615E-18"
+        iyy="0.00720966812251228"
+        iyz="7.26415455565288E-18"
+        izz="0.0122845286882287" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontLeftWheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/FrontLeftWheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontLeftWheel_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0381000000000001 0"
+      rpy="0 0 -1.35659055615486" />
+    <parent
+      link="FrontLeft_Link" />
+    <child
+      link="FrontLeftWheel_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <transmission name="FrontLeftWheel_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="FrontLeftWheel_Joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="FrontLeftWheel_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+  
+  <link
+    name="BackRight_Link">
+    <inertial>
+      <origin
+        xyz="-0.00266512733744148 -0.00963831397471698 0.167020899710353"
+        rpy="0 0 0" />
+      <mass
+        value="3.45778243780211" />
+      <inertia
+        ixx="0.0410766642467973"
+        ixy="2.16840434497101E-19"
+        ixz="-1.34767591433348E-18"
+        iyy="0.0410766642467973"
+        iyz="-1.82287355197184E-18"
+        izz="0.0126664872911342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/BackRight_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/BackRight_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackRight_Joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.403461365696226 0.0656715754061382"
+      rpy="-1.5707963267949 -1.51992481797961 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackRight_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <transmission name="BackRight_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="BackRight_Joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="BackRight_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+  
+  <link
+    name="BackLeft_Link">
+    <inertial>
+      <origin
+        xyz="-0.0010775522056843 -0.00994177455206191 -0.16702089971035"
+        rpy="0 0 0" />
+      <mass
+        value="3.45778243780211" />
+      <inertia
+        ixx="0.0410766642467973"
+        ixy="-8.67361737988404E-19"
+        ixz="-1.05915707578193E-18"
+        iyy="0.0410766642467973"
+        iyz="-1.69173975333796E-18"
+        izz="0.0126664872911342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/BackLeft_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car_description/meshes/BackLeft_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackLeft_Joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.403687063238247 0.0629915043016358"
+      rpy="-1.5707963267949 -1.411959972577 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="BackLeft_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <transmission name="BackLeft_T">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="BackLeft_Joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="BackLeft_Motor">
+     <mechanicalReduction>50</mechanicalReduction>
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </actuator>
+  </transmission>
+</robot>

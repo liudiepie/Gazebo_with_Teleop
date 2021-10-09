@@ -1,0 +1,18 @@
+  gazebo_ros_control:
+    pid_gains:
+      FrontRightWheel_Joint:
+        p: 10
+        i: 0.1
+        d: 0
+      FrontLeftWheel_Joint:
+        p: 10
+        i: 0.1
+        d: 0
+      BackRight_Joint:
+        p: 10
+        i: 0.1
+        d: 0
+      BackLeft_Joint:
+        p: 10
+        i: 0.1
+        d: 0

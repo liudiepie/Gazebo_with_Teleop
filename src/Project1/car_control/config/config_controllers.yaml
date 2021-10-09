@@ -1,0 +1,40 @@
+# Robot name goes here
+simple_car: # change the name
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  FrontRight_Control: # change the name
+    type: effort_controllers/JointEffortController
+    joint: FrontRight_Joint
+
+
+  # Controller 2
+  FrontRightWheel_Control: # change the name
+    type: velocity_controllers/JointVelocityController
+    joint: FrontRightWheel_Joint
+
+  # Controller 3
+  FrontLeft_Control: # change the name
+    type: effort_controllers/JointEffortController
+    joint: FrontLeft_Joint
+
+  # Controller 4
+  FrontLeftWheel_Control: # change the name
+    type: velocity_controllers/JointVelocityController
+    joint: FrontLeftWheel_Joint
+
+  # Controller 5
+  BackRight_Control: # change the name
+    type: velocity_controllers/JointVelocityController
+    joint: BackRight_Joint
+
+  # Controller 6
+  BackLeft_Control: # change the name
+    type: velocity_controllers/JointVelocityController
+    joint: BackLeft_Joint
+
+    
+

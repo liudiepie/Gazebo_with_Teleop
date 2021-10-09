@@ -1,0 +1,2 @@
+Project1/car_control:Project1/car_description:Project1/car_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/cliu/117694802_Project1/Package/devel -DCMAKE_INSTALL_PREFIX=/home/cliu/117694802_Project1/Package/install -G Unix Makefiles

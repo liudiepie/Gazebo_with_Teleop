@@ -1,0 +1,8 @@
+prefix=/home/cliu/117694802_Project1/Package/devel
+
+Name: car_description
+Description: Description of car_description
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
