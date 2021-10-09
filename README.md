@@ -1,10 +1,10 @@
 # Gazebo_with_Teleop
-This is a project of ENPM662. 
-The main purpose is to practice how to design the car model on SolidWorks and spawn the model in Gazebo.
-Utilizing ROS frame, the car model can control the joints with Teleop.
-Here are the display videos:
-[Gazebo with Teleop, own car and laser model](https://www.youtube.com/watch?v=5N5hD4imLy4)
-[Gazebo with Publisher and Subscriber](https://www.youtube.com/watch?v=G4sIyFC-L4w)
+This is a project of ENPM662.   
+The main purpose is to practice how to design the car model on SolidWorks and spawn the model in Gazebo.  
+Utilizing ROS frame, the car model can control the joints with Teleop.  
+Here are the display videos:  
+[Gazebo with Teleop, own car and laser model](https://www.youtube.com/watch?v=5N5hD4imLy4)  
+[Gazebo with Publisher and Subscriber](https://www.youtube.com/watch?v=G4sIyFC-L4w)  
 ## To run the Package:
   * First (source the file):  
     Type
